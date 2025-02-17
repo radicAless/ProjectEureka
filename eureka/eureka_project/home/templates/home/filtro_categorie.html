@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games of Type: {{ game_type }}</title>
+    <style>
+        body {
+            margin: 0;
+            font: 100% / 1.5 Raleway, sans-serif;
+            color: hsl(230, 100%, 95%);
+            background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+        }
+        a:link {
+            color: whitesmoke;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:hover {
+            color: hotpink;
+        }
+        .game-section {
+            margin-bottom: 50px;
+            width: 80%;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            width: 600px; 
+            margin: 0 auto; 
+        }
+        .game-section.facile {
+            border: 2px solid green; 
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+            background: rgba(0, 255, 0, 0.1);
+            margin-bottom: 20px; 
+        }
+
+        .game-section.medio {
+            border: 2px solid yellow; 
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
+            background: rgba(255, 255, 0, 0.1);
+            margin-bottom: 20px; 
+        }
+
+        .game-section.difficile {
+            border: 2px solid red; 
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+            background: rgba(255, 0, 0, 0.1);
+            margin-bottom: 20px; 
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid hsl(230, 100%, 80%);
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: hsl(230, 40%, 20%);
+        }
+        .hidden-column {
+            display: none;
+        }
+        h1, h2 {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Games of Type: {{ game_type }}</h1>
+
+    {% for difficulty, games in grouped_games %}
+    {% if games %}
+        <div class="game-section {{ difficulty }}">
+            <h2>{{ difficulty|title }}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Game Name</th>
+                        <th class="hidden-column"></th>
+                        <th class="hidden-column"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for game in games %}
+                        <tr>
+                            {% if game in completed_games %}
+                                <td>{{ game.game.name }} - (Completed)</td>
+                            {% else %}
+                                <td><a href="{% url 'home:game_detail' game.id %}">{{ game.game.name }}</a></td>
+                            {% endif %}
+                            <td class="hidden-column"></td>
+                            <td class="hidden-column"></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+{% endfor %}
+    <a href="{% url 'home:index' %}">Back to Home</a>
+</body>
+</html>
+

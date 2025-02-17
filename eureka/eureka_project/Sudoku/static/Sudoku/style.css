@@ -1,0 +1,119 @@
+
+body{
+    text-align: center;
+  }
+  
+  hr{
+    width: 500px;
+  }
+  
+  #tabella{
+    width: 450px;
+    height: 450px;
+    
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  
+  }
+  
+  .container {
+    position: relative;
+  }
+  
+  #numeri{
+    width: 450px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .cella{
+    width: 48px;
+    height: 48px;
+    border: 1px solid lightgrey;
+  
+    /* testo */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .numero{
+    
+    width: 44px;
+    height: 44px;
+    border: 1px solid black;
+    margin: 2px;
+  
+    /* testo */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .num_selected {
+    background-color: gray;
+  }
+  
+  .gomma_selcted{
+    background-color: gray;
+  }
+  
+  .celle_iniziali{
+    background-color: whitesmoke;
+  }
+  
+  .riga_orizzontale{
+    border-bottom: 2px solid black;
+  }
+  
+  .riga_verticale{
+    border-right: 2px solid black;
+  }
+  
+  .gomma{
+    color: black;
+    margin: 10px;
+  }
+  
+  .reset{
+    margin: 10px;
+  }
+  
+  .soluzione{
+    margin: 10px;
+  }
+  
+  .verifica{
+    margin: 10px;
+  }
+
+  .nuovo{
+    margin: 10px;
+  }
+  
+  .home_link{
+    float: right;
+  }
+  /* .gomma{
+  background: none;
+  border: none;
+  padding: 0;
+  }
+  
+  .matita{
+    background: none;
+    border: none;
+    padding: 0;
+  } */
+    

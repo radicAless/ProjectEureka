@@ -1,0 +1,13 @@
+high-level design:
+
+Frontend Development: HTML, CSS, JavaScript (vedere possibilità di utilizzo di React)
+
+Backend Development: Javascript, framework Django
+
+Database: MySQL
+
+Testing:
+
+    test “manuali” per controllare le funzionalità e i casi d’uso
+
+    test automatici con utilizzo di: Python unittest, Django built-in TestCase

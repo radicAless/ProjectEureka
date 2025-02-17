@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EUREKA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        body {
+            background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            font-family: "Raleway", sans-serif;
+        }
+        .title {
+            font-family: "Raleway", sans-serif;
+            color: antiquewhite;
+            padding-left: 2%;
+            font-size: 50px;
+            margin-bottom: 50px;
+        }
+        .leaderboard {
+            color: white;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            width: 600px; 
+            margin: 0 auto; 
+        }
+        h1 {
+            font-size: 5rem;
+            font-weight: 300;
+            animation: lights 5s 750ms linear infinite;
+            margin: 0;
+            text-align: center;
+            color: hsl(230, 100%, 95%);
+        }
+        .container {
+            display: flex;
+            align-items: flex-end;
+        }
+        .podium__item {
+            width: 150px;
+            margin: 0 10px;
+        }
+        .podium__rank {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            color: #fff;
+        }
+        .podium__city {
+            color: white;
+            text-align: center;
+            padding: 0 .5rem;
+        }
+        .podium__number {
+            width: 27px;
+            height: 75px;
+        }
+        .podium .first {
+            min-height: 300px;
+            background: rgb(255,215,0);
+        }
+        .podium .second {
+            min-height: 200px;
+            background: rgb(192,192,192);
+        }
+        .podium .third {
+            min-height: 100px;
+            background: rgb(205, 127, 50);
+        }
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px; 
+        }
+        .leaderboard-table th, .leaderboard-table td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+        }
+        .leaderboard-table tr:nth-child(even) {
+            background-color: hsl(230, 20%, 7%);
+        }
+        .leaderboard-table tr:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-indigo w3-animate-left w3-text-white w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+    <h3 class="w3-padding-64 w3-center"><b>EUREKA</b></h3>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+    <a href="{% url 'home:categorie' %}" class="w3-bar-item w3-button">CATEGORIE</a>
+    <a href="{% url 'home:difficolta' %}" onclick="w3_close()" class="w3-bar-item w3-button">DIFFICOLTÀ</a>
+    <a href="{% url 'home:user_profile' %}" onclick="w3_close()" class="w3-bar-item w3-button">PROFILO</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-indigo w3-xlarge w3-padding-16">
+    <span class="w3-left w3-padding">EUREKA</span>
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<div class="w3-main" style="margin-left:300px">
+
+    <!-- Push down content on small screens -->
+    <div class="w3-hide-large" style="margin-top:83px"></div>
+
+    <!-- Homepage -->
+    <body>
+        <div class="w3-row">
+            <h1>Benvenuto su Eureka</h1>
+            <h1 class="title">LEADERBOARD</h1>
+            <div class="leaderboard">
+                <div class="container podium">
+                    <div class="podium__item">
+                        <p class="podium__city">{{ top_users.1.username }} - {{ top_users.1.total_score }}</p>
+                        <div class="podium__rank second">2</div>
+                    </div>
+                    <div class="podium__item">
+                        <p class="podium__city">{{ top_users.0.username }} - {{ top_users.0.total_score }}</p>
+                        <div class="podium__rank first">
+                            <svg class="podium__number" viewBox="0 0 27.476 75.03" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="matrix(1, 0, 0, 1, 214.957736, -43.117417)">
+                                    <path class="st8" d="M -198.928 43.419 C -200.528 47.919 -203.528 51.819 -207.828 55.219 C -210.528 57.319 -213.028 58.819 -215.428 60.019 L -215.428 72.819 C -210.328 70.619 -205.628 67.819 -201.628 64.119 L -201.628 117.219 L -187.528 117.219 L -187.528 43.419 L -198.928 43.419 Z" style="fill: #000;"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="podium__item">
+                        <p class="podium__city">{{ top_users.2.username }} - {{ top_users.2.total_score }}</p>
+                        <div class="podium__rank third">3</div>
+                    </div>
+                </div>
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Username</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users|slice:"3:" %}
+                            <tr>
+                                <td>{{ forloop.counter0|add:4 }}</td>
+                                <td>{{ user.username }}</td>
+                                <td>{{ user.total_score }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script>
+
+            // Script to open and close sidebar
+            
+            function w3_open() {
+              document.getElementById("mySidebar").style.display = "block";
+              document.getElementById("myOverlay").style.display = "block";
+            }
+             
+            function w3_close() {
+              document.getElementById("mySidebar").style.display = "none";
+              document.getElementById("myOverlay").style.display = "none";
+            }
+            
+        </script>
+    </body>
+    </html>

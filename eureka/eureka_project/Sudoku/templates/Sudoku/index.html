@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> prova
+        </title>
+        <link href="{% static 'Sudoku/style.css' %}" rel="stylesheet">
+        <script src="{% static 'Sudoku/Sudoku.js' %}"></script>
+        
+    </head>
+
+    <body>
+        {% if difficulty %}
+            <h2 id="difficulty" data-difficulty="{{ difficulty }}">Difficoltà: {{ difficulty }}</h2>
+        {% else %}
+            <h2 id="difficulty">Difficoltà: facile</h2>
+        {% endif %}
+        <!-- <h2 id="Difficoltà"></h2> -->
+        <a href="{% url 'home:index' %}" class="home_link"> HOME</a>
+        <hr>
+        <!-- tabella sudoku generata con js -->
+        <div id="tabella"></div>
+        <button class="reset" onclick="reset()">Reset</button>
+        <button class="soluzione" onclick="soluzione()">Soluzione</button>
+        <button class="verifica" onclick="verifica()">Verifica</button>
+        <!-- <button class="nuovo" onclick="nuovo()" >Nuova partita</button> -->
+        <!-- linea vuota per fare spazio -->
+        <br>
+        <!-- riga con i numeri da inserire -->
+        <div id="numeri"></div>
+        <!-- pulsante gomma per cancellare un numero inserito -->
+        <button  class="gomma" onclick="cancella()">
+            <img src="{% static 'Sudoku\images\gomma.jpg' %}" width="50">
+        </button>
+    </body>
+
+   

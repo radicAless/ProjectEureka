@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>EUREKA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=-QTtF89L-N7xYjLzGZSsLf9KGQepr6o3drCiCpWIv4YhVpsidzUuQiBsxFjzwnvT8_emMrzmnyLvGhQ4RWGM5BnjLzYkrjHl8Pg_o72Tf1onLasctz38qwcGurARrwJRumrxe_b-HWBGwbJ1yZhAUPacT8M37kfR-qg_51j_2GSfJwodeE88QNv1RLtC20zhjAOo2kFngynO1cL88O-hxZKsM1VG9C71oCLwfOISJI4qWZmtZJQpaDuo3v6qLo9KpL4vbJT4artbtDL7-PG44RsSn51LmoRfDjCoiGSPjHUkxLat0GaKLbbVfskNjY8Gfsgf8aIzZXDv5sspHmFGqkbdya9zgsVC9-End4y5t2hhBgSQtEDBF1axRQT3kOmaXEhOP7AtXlge-CLqM5pUTNG9WqZsup_O4GlKkYowSGXtcK--si1LkVYt82a8qySc4WYS1iAd3ZH04Jgq00Yf5FycV_X7JqIFj241yDITYUt6h-DUGxckA1Zq6hTl8ZlOAdqQOAsrlnSUCJ716uVwzY2P5ALoeST-awK2yZeBsWn-vJQrf1tnDfeWofpobBymRcJ7g2Nu1h0eEJW5i2DeGW7aKQ_SA-v-AXzAZ9lQDLPW2TkY3TpeXKsHs5KP9LMh-HsLcme77GrhkcDGpcl6UWg0HdVARTFy6N85_rdENk4k5PJHH6qxc4DXiqzl8pBH0RhgO0wbE1_On2Eo0w4qvjO-Uc_iK39b7P1ezfdlS-J0tU_wwhiaaAc-6bV0GGI76f5_uw6-Z4fav5qHlGiovz7jgp6U5nXovGdYmRlcz3lsvdZeq0PGnUKDgJjHe_G_Le1qgccNx6fkaswCThHVFLVij8i_4-07HIidUnYLz-aCWEXMAO7RN1UYa51xXCMNc9Xihg73cgvI1fmRA9pkdQfByXd4P8g4-PPLWUwXHoRY6scQx3H03zlWOZyTWDYXmnIex3yYxehd5oFi_iaLP3fq2W22Ar1J8QjbYd6F6t4gyvHb1wlu7LFngyZXXDKvb53-zv_MDQW0l2Lzx8x4EktwYS8Pdye5GfIhRp6fEJEK1KJ4HWosZX4a2dtxA_vbykDwD4R9HuZbn9oS0CpD3idhmU8C_n1gzA6p7TOg_YT8O5pCzL6kGsUjPI34twPWitH2-4fFXpTqs7ppuemOZYqFXJQ-KCfd8ZKIoSAHy1ENWMOczkq5otdsL7foRNqcbeDvy9hxNP0XpAeR-uWNQR_6kFX9ExQM5IxyuRGpb6-4gBgWGT0xHZO6Tvt1sG97UNLR9zrMlFPGLslUmnz5SqVa4GRozibdvytqyTI41mGEHPBvqws8drFN73VIvWDZ36FyNYiCQNEjU5baZNKj8ilS4xyF7_0ybPMDO--ytodMb3R8ZLW0zqIk6vzaZpnWH_HERyb-B-r87Cmdn3A7psTYCRJYvclY787bbrieHuKYKsZ0-cIH_hG2VMy0ywY2JUqHJ0glWlCMJqrmm9pJR2g4LE2QDAeftHtxDHSceW7Q8p1AakYADpMp5tHaIvHSCahRyWI0qu8yRpyXzXVigHx4uZ8nhTL_U3i-2w_Iy6QhgaGSpjmJlx5_Q65gIq5rB1-3EvIf2PapLZqbTlH4SNl7aHpQ5YT8-Ver-3D4VnYT-wvgd3ZbyjW_PNW9PPz4LiHPnWK0BL7csTDn29aGNtyzRLKEmAkGzZmzs3NF1wdN4x5kgfFPVufy4vLwJcZWmH4IfdQ0tf3pD2iM_BXyCA" nonce="203ece8c68ac5035012b7deaf53d6963" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tYWlsLWF0dGFjaG1lbnQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2F0dGFjaG1lbnQvdS8xLz91aT0yJmlrPTQ5OGQ5M2EwMzgmYXR0aWQ9MC4yJnBlcm1tc2dpZD1tc2ctZjoxNzk1MTI2MzY4MjU0MjQzNTYyJnRoPTE4ZTk5MWViYzJiYjMyZWEmdmlldz1hdHQmZGlzcD1zYWZlJnNhZGRiYXQ9QU5HamRKX0xjVHg5ZnQwTWFkR3doc2dHc0R5QjJsM295Vkx0N0tVdHJBakhsQ0l0Q09iZHpVcTk1WjkzbkV1S1RNT1dYUWZoWXNMNVVCaE4zYjFudHJfNHhINDUxalRzZER4MjYxdXV0Ri1UZDM4N0FLNHFycnlWUFpFaEVxY2ZacWNyUlB4ZVlfZF9acE42UlpuRGNGY181S0lUVUs4QWxvbmJ6LTU1eFcyeUtKRWJ4RnpKNjRRcTF6ZG80WkxUdGhlQVV2QmwzeEFiNVQ0S0dBQ2QwaDJzMTZnT3dsaGhpSmprd1NEUnlRMHVoSE5LTFhrMU1STC13LXNYX0k1MnM5MXVfZDFBdkE0TnhfSGJPNEJ2Rlo2ckJqV1VTS1ppQ3paS21CbGJaY092OF9jNFNQWFZHTGF4Sks4OVREMFM5NFZUQkxZRngyM2NUd010TzFiUS1qRXVHRWhtbmQ5Qy1EbTJYeEhJY1otNmNOWWxSY2g4YWtqQmJYWUo1WG9OZEhabE1nTGhyM0ItRlROXzNxdDU5YnZ3T2kxb2NocVdEUGZleTJ6S3FnWjVPRWNMdXRybm5hNzJCcFUyNWFGRWt1SnZySWxlcUVJWUY0dUJmMzBWX3c0OEJoMVdMa19qeWx1RWFWNGpYOEVkY3JoRTJxbTREQzEwa3g4UzN3ZVFHdHdPeWhyZFk4UDh1MGhFUGpCZWtUTG5PMmtPZ1dWYkxPTnNhQmtHN0hmT1g3VVc2NHhyMmhfbVFJU0RaWmVEWHB1a1J6YnBicTNERDdVV3Fqa1o5dWl1WmJtTWdDZW9NN0o0YUFLOEE0NFppXzByUnAwRVdrRGJEQllFdFdIQWhmVkdnX0Y2TmpyRHZ0dWpqTC1lZnItbHd3bThIYllXaEtjQmdBMzRKVTFtbEphOWdCZDE0ejhkNUM1d2dmcEpwcmVjMjVCYWJueTFGb1B4UVdhZ2pjRUZ2cDNzWWZ6M25mR3BmY2IwYVZfbDYtTmRVOE1LbFY2bEVRbG1ZaWZmOWlEM0tIQW5hcmZKaEFSSDc2UzQtZDZjZFR5clpaM3VvU0lMQUo3TVNqSHYwRnl2c1Rqa0FzUmFnbGM0ajc0RHhRNnM1SVlRUDAxMXhybmZVTnZabFRuRGtMWWJ6clJvcGpJcGFtU19QQnJqR3JwTGV3V2c0Sl9MVjU3NHZBNGl3N21IaEVwWVAyQWJQTzVFbmJUTkVuOHhpSjJDYXlSM0M2MWlnN3QwR0NIUWFUQXZEUkFRbjVVZWxQU282cmJrTzhVYjM4aDByUkp0WEFleURNeGIzcmJjc2wydXJiSURiQjltV2o0NFZrcUZQX1FZNjRQd1FFQkc0ZV9iazd3MjROWmotdW9iUGxsR0J1bENrQ2s1SDFJdE5rbS1rckNKRkFzdlZINDIyaGFxSFRRSjhlUW95S3RCQ05yU0lwWEtPejA0VzRyanRTVW5qVWJybTNzUA"/>
+<style>
+
+body{
+    font-family: "Raleway", sans-serif;
+    background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: 100% 100%;
+  }
+
+  h1,h2,h4,h5 {font-family: "Raleway", sans-serif; color: antiquewhite;}
+  .w3-third img{
+    margin-bottom: -6px; 
+    opacity: 0.8; 
+    cursor: pointer;
+  }
+  .w3-third img:hover{opacity: 1}
+
+  div.polaroid {
+    width: 90%;
+    background: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+
+  div.descr {
+    text-align: center;
+    padding: 10px ;
+  }
+</style>
+</head>
+
+<body class="w3-light-grey w3-content" style="max-width:1500px">
+  
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-indigo w3-animate-left w3-text-white w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+  <h3 class="w3-padding-64 w3-center"><b>EUREKA</b></h3>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+  <!-- <a href="#profile" class="w3-bar-item w3-button"> PROFILO</a>  -->
+  <a href="{% url 'home:index' %}" onclick="w3_close()" class="w3-bar-item w3-button"> HOME</a>
+  <a href="{% url 'home:difficolta' %}" onclick="w3_close()" class="w3-bar-item w3-button"> DIFFICOLTÀ</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-indigo w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">EUREKA</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+  <h2 style="text-align:center"> Scegli una categoria di giochi </h2>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+  <h1 style="text-align:center"> Scegli una categoria di giochi </h1>
+
+  <!-- Push down content on small screens --> 
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+
+  <!-- Photo grid -->
+  <div w3-row>    
+    <div class="w3-third">
+      
+      <a href="{% url 'home:filtro_categorie' 'regine' %}"> 
+        <div class="polaroid">
+        <img src="https://media.licdn.com/dms/image/D4D12AQEs88H8uz9u2A/article-cover_image-shrink_720_1280/0/1694706370089?e=2147483647&v=beta&t=VUDZr3rCUyso5rkVfSveTXNAb1538vCdN-kfd8hQT2w" 
+        alt="COMING SOON" title="REGINE SULLA SCACCHIERA" style="width:100%">
+        <div class="descr">
+        <p>REGINE SULLA SCACCHIERA</p>
+        </div>
+        </div>
+      </a> 
+
+      <a href="{% url 'home:filtro_categorie' 'sudoku' %}"> 
+        <div class="polaroid">
+        <img src="{% static 'home\images\sudoku.png' %}" 
+        alt="Sudoku" style="width:100%">
+        <div class="descr">
+        <p>Sudoku</p>
+        </div>
+        </div>
+      </a> 
+    </div>
+
+    <div class="w3-third">
+      
+      <a href="#"> 
+        <div class="polaroid">
+        <img src="https://cdn-icons-png.freepik.com/256/10157/10157907.png" 
+        alt="COMING SOON" style="width:100%">
+        <div class="descr">
+        <p>COMING SOON</p>
+        </div>
+        </div>
+      </a> 
+
+      <a href="#"> 
+        <div class="polaroid">
+        <img src="https://cdn-icons-png.freepik.com/256/10157/10157907.png" 
+        alt="COMING SOON" style="width:100%">
+        <div class="descr">
+        <p>COMING SOON</p>
+        </div>
+        </div>
+      </a> 
+    </div>
+  
+    <div class="w3-third">
+      <a href="#"> 
+        <div class="polaroid">
+        <img src="https://cdn-icons-png.freepik.com/256/10157/10157907.png" 
+        alt="COMING SOON" style="width:100%">
+        <div class="descr">
+        <p>COMING SOON</p>
+        </div>
+        </div>
+      </a> 
+
+      <a href="#"> 
+        <div class="polaroid">
+        <img src="https://cdn-icons-png.freepik.com/256/10157/10157907.png" 
+        alt="COMING SOON" style="width:100%">
+        <div class="descr">
+        <p>COMING SOON</p>
+        </div>
+        </div>
+      </a> 
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<script>
+
+// Script to open and close sidebar
+
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rompicapo delle regine (300)</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-text: top;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chessboard {
+            display: flex;
+            flex-wrap: wrap;
+            width: 250px;
+            height: 250px;
+        }
+
+        .square {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .dark {
+            background-color: #769656;
+        }
+
+        .light {
+            background-color: #eeeed2;
+        }
+
+        .queen {
+            color: #000000;
+        }
+
+        #riprova, #fatto {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+    
+<body>
+<div class="chessboard" id="chessboard">
+    </div>
+    <button id="riprova">Riprova</button>
+    <button id="fatto">Fatto!</button>
+
+    <script>
+        var boardSize = 5
+        // Function to generate the chessboard      
+        function generateChessboard() {
+            var chessboard = document.getElementById('chessboard');
+            
+            for (var i = 0; i < boardSize; i++) {
+                for (var j = 0; j < boardSize; j++) {
+                    var square = document.createElement('div');
+                    square.classList.add('square');
+
+                    // Set background colors for chessboard pattern
+                    if ((i + j) % 2 === 0) {
+                        square.classList.add('light');
+                    } else {
+                        square.classList.add('dark');
+                    }
+
+                    // Set data attributes to represent row and column indices
+                    square.dataset.row = i;
+                    square.dataset.col = j;
+
+                    // Add event listener for square click to handle inserting the queen
+                    square.addEventListener('click', function() {
+                        // Check if a queen already exists in this square
+                        var existingQueen = this.querySelector('.queen');
+                        if (existingQueen) {
+                            // If queen exists, remove it
+                            existingQueen.parentNode.removeChild(existingQueen);
+                        } else {
+                            // If queen doesn't exist, create and append a new queen
+                            var queen = document.createElement('span');
+                            queen.classList.add('queen');
+                            queen.innerHTML = '&#9813;'; // Unicode for a black queen
+                            this.appendChild(queen);
+                        }
+                    });
+
+                    // Append the square to the chessboard
+                    chessboard.appendChild(square);
+                }
+            }
+        }
+
+        // Call the function to generate the chessboard
+        generateChessboard();
+
+        // Add event listener for button to remove all queens
+        document.getElementById('riprova').addEventListener('click', function() {
+            var queens = document.querySelectorAll('.queen');
+            queens.forEach(function(queen) {
+                queen.parentNode.removeChild(queen);
+            });
+        });
+
+        // Add event listener for button to check queens position
+        document.getElementById('fatto').addEventListener('click', function() {
+            var queens = document.querySelectorAll('.queen');
+            var isValid = true;
+            if (queens.length != boardSize){
+                isValid = false;
+            }
+            else{
+                queens.forEach(function(queen1) {
+                    queens.forEach(function(queen2) {
+                        if (queen1 !== queen2) {
+                            var row1 = parseInt(queen1.parentElement.dataset.row);
+                            var col1 = parseInt(queen1.parentElement.dataset.col);
+                            var row2 = parseInt(queen2.parentElement.dataset.row);
+                            var col2 = parseInt(queen2.parentElement.dataset.col);
+                            if (row1 === row2 || col1 === col2 || Math.abs(row1 - row2) === Math.abs(col1 - col2)) {
+                                isValid = false;
+                            }
+                        }
+                    });
+                });
+            }
+            
+            if (isValid) {
+                alert('CORRETTO! :)');
+            } else {
+                alert('SBAGLIATO! :(');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <style>
+         body {
+            margin: 0;
+            font: 100% / 1.5 Raleway, sans-serif;
+            color: hsl(230, 100%, 95%);
+            background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));
+            height: 100vh;
+
+        }
+        #container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+        }
+        #header {
+            width: auto;
+            height: auto;
+            display: flex;
+            text-align: left;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: rgb(24, 124, 186);
+            color: white;
+        }
+        a:link {
+            color: whitesmoke;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:hover{
+            color: hotpink;
+        }
+        #giochi{
+            padding-left: 2%;
+        }
+        #punteggio{
+            padding-left: 2%;
+            color: whitesmoke;
+            font-size: 100% / 2.5 Raleway, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: white;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th{
+            border-bottom: 1px solid #ddd;
+        }
+        .odd {
+            background-color: hsl(230, 20%, 7%);
+        }
+        .even {
+            background-color: rgb(31, 29, 29);
+        }
+        .difficulty {
+            padding: 5px;
+            border-radius: 5px;
+            color: white;
+        }
+        .difficulty.easy {
+            color: green;
+        }
+        .difficulty.medium {
+            color: yellow;
+        }
+        .difficulty.hard {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h2>Benvenuto: {{ user.username }}</h2>
+            <div id="header_pulsanti">
+                <a href="{% url 'home:logout' %}">Logout</a>
+                /
+                <a href="{% url 'home:index' %}">Home</a>
+            </div>
+        </div>
+
+        <div id="punteggio">
+            <h3>Punteggio totale: {{ user.total_score }}</h3>
+        </div>
+
+        <div id="giochi">
+            <h3>Lista Giochi:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Game</th>
+                        <th>Difficoltà</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for game in all_games %}
+                        <tr class="{% cycle 'odd' 'even' %}">
+                            <td>{{ game.game.name }}</td>
+                            <td>
+                                <span class="difficulty {% if game.difficulty == 'facile' %}easy{% elif game.difficulty == 'medio' %}medium{% elif game.difficulty == 'difficile' %}hard{% endif %}">
+                                    {{ game.difficulty }}
+                                </span>
+                            </td>
+                            <td>
+                                {% if game in completed_games %}
+                                    Completed
+                                {% else %}
+                                    <a href="{% url 'home:game_detail' game.id %}">Play</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
